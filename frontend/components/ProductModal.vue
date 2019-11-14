@@ -1,5 +1,5 @@
 <template>
-  <form action="" @submit.prevent>
+  <form @submit.prevent>
     <div class="modal-card">
       <header class="modal-card-head">
         <p class="modal-card-title">Cadastrar Novo Produto</p>
@@ -57,10 +57,7 @@
             expanded
             placeholder="Selecione uma Categoria para o Produto"
           >
-            <option 
-              value=""
-              disabled
-            >
+            <option value="" disabled>
               Selecione uma Categoria para o Produto
             </option>
 
@@ -101,6 +98,7 @@
         >
           Fechar
         </button>
+        
         <button 
           class="button is-primary"
           @click="createProduct"
@@ -137,21 +135,24 @@ export default {
 
     async fetchCategories () {
       const { data } = await Category.get()
+
       this.categories = data
     },
 
-    async createProduct () {
+    async createProduct (event) {
       const formData = new FormData()
-        formData.append('title', this.title)
-        formData.append('description', this.description)
-        formData.append('price', this.price)
-        formData.append('category_id', this.selectedCategory)
-        formData.append('thumbnail', this.selectedFile)
+
+      formData.append('title', this.title)
+      formData.append('description', this.description)
+      formData.append('price', this.price)
+      formData.append('category_id', this.selectedCategory)
+      formData.append('thumbnail', this.selectedFile)
 
       await Product.create(formData)
-      await this.$emit('productChange', true)
-      await this.$buefy.toast.open('Produto Criado com Sucesso!')
+      
+      this.$emit('productChange', true)
       this.$parent.close()
+      this.$buefy.toast.open('Produto Criado com Sucesso!')
     }
   }
 }
@@ -159,7 +160,6 @@ export default {
 
 <style lang="scss">
 .modal-card {
-
   .modal-card-body {
     .section {
       width: 100%;

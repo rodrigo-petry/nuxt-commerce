@@ -7,18 +7,13 @@
 
       <section class="modal-card-body" ref="element">
         <b-field>
-          <b-upload
-            v-model="selectedFile"
-            drag-drop
-          >
+          <b-upload v-model="selectedFile" drag-drop>
             <section class="section">
               <div class="content has-text-centered">
                 <p>
-                  <b-icon
-                    icon="upload"
-                    size="is-large">
-                  </b-icon>
+                  <b-icon icon="upload" size="is-large"></b-icon>
                 </p>
+
                 <p>Arraste uma Imagem ou Clique para fazer Upload</p>
               </div>
             </section>
@@ -35,8 +30,8 @@
             <button 
               class="delete is-small"
               type="button"
-              @click="deleteDropFile()">
-            </button>
+              @click="deleteDropFile()"
+            ></button>
           </span>
         </div>
 
@@ -88,7 +83,6 @@
       <footer class="modal-card-foot">
         <button 
           class="button" 
-          type="button" 
           @click="$parent.close()"
         >
           Fechar
@@ -132,6 +126,7 @@ export default {
 
     async fetchCategories () {
       const { data } = await Category.get()
+
       this.categories = data
     },
 
@@ -141,22 +136,25 @@ export default {
       })
 
       const { data } = await Product.detail(this.productId)
+      
       this.currentProduct = data[0]
-      await loadingComponent.close()
+      loadingComponent.close()
     },
 
     async updateProductInfos () {
       const formData = new FormData()
-        formData.append('title', this.currentProduct.title)
-        formData.append('description', this.currentProduct.description)
-        formData.append('price', this.currentProduct.price)
-        formData.append('category_id', this.currentProduct.category_id)
-        formData.append('thumbnail', this.selectedFile)
+
+      formData.append('title', this.currentProduct.title)
+      formData.append('description', this.currentProduct.description)
+      formData.append('price', this.currentProduct.price)
+      formData.append('category_id', this.currentProduct.category_id)
+      formData.append('thumbnail', this.selectedFile)
 
       await Product.update(this.productId, formData)
-      await this.$emit('productChange', true)
-      await this.$buefy.toast.open('Produto Atualizado com Sucesso!')
+      
+      this.$emit('productChange', true)
       this.$parent.close()
+      this.$buefy.toast.open('Produto Atualizado com Sucesso!')
     }
   }
 }
