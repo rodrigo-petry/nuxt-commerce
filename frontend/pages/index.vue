@@ -5,6 +5,7 @@
       <p class="page-description">
         Esta é a Página Inicial da sua aplicação, onde terá todo o controle da mesma
       </p>
+      <p class="" dsadasd="asd" v-cloak></p>
     </div>
   </section>
 </template>

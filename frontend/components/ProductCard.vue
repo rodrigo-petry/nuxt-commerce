@@ -107,8 +107,8 @@ export default {
       text-transform: uppercase;
       font-weight: 500;
       position: absolute;
-      right: -4px;
-      top: -3px;
+      right: 0;
+      top: -8px;
       font-size: 11px;
       width: 85px;
       height: 30px;

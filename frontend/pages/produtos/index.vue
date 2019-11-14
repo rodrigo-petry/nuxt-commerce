@@ -43,7 +43,6 @@
           @onDeleteProduct="onDeleteProduct"
           @productChange="productChange"
         />
-
       </div>
 
       <div class="column is-full">

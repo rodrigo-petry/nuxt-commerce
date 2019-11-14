@@ -12,57 +12,39 @@
         custom
         paddingless
       >
-        <form action="">
-          <div class="modal-card" style="width:300px;">
-            <section class="modal-card-body">
-              <h4 class="notification-title">Notificações</h4>
+        <div class="modal-card" style="width:300px;">
+          <section class="modal-card-body">
+            <h4 class="notification-title">Notificações</h4>
 
-              <div class="notifications">
-                <div class="notification-item">
-                  <h5 class="notification-item-title">Novo Item Vendido #JAD45</h5>
-                  
-                  <p class="notification-description">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit...
-                  </p>
-                </div>
-
-                <div class="notification-item">
-                  <h5 class="notification-item-title">Novo Item Vendido #JMK5</h5>
-                  
-                  <p class="notification-description">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit...
-                  </p>
-                </div>
-
-                <div class="notification-item">
-                  <h5 class="notification-item-title">Novo Item Vendido #OKL12</h5>
-                  
-                  <p class="notification-description">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit...
-                  </p>
-                </div>
+            <div class="notifications">
+              <div class="notification-item">
+                <h5 class="notification-item-title">Novo Item Vendido #JAD45</h5>
+                <p class="notification-description">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit...
+                </p>
               </div>
-            </section>
+
+              <div class="notification-item is-read">
+                <h5 class="notification-item-title">Novo Item Vendido #JMK5</h5>
+                
+                <p class="notification-description">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit...
+                </p>
+              </div>
+            </div>
+          </section>
               
-            <footer class="modal-card-foot">
-              <button class="button is-primary">Marcar como lidas</button>
-            </footer>
-          </div>
-        </form>
+          <footer class="modal-card-foot">
+            <button class="button is-primary">Marcar como lidas</button>
+          </footer>
+        </div>
       </b-dropdown-item>
     </b-dropdown>
   </div>
 </template>
 
-<script>
-export default {
- 
-}
-</script>
-
 <style lang="scss" scoped>
 .notification-dropdown {
-  
   .modal-card-body {
     padding: 0;
 
@@ -76,6 +58,11 @@ export default {
       .notification-item {
         border-top: 1px solid #dbdbdb;
         padding: 10px 20px;
+        position: relative;
+
+        &.is-read {
+          opacity: 0.5;
+        }
       }
 
       .notification-item-title {
