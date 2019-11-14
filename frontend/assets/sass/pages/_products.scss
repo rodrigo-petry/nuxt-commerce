@@ -1,0 +1,91 @@
+@import '@/assets/sass/abstracts/_variables.scss';
+@import '@/assets/sass/abstracts/_mixins.scss';
+
+.products {  
+  background-color: #f4f7fc;
+  min-height: 100%;
+
+  .products-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 30px 24px 12px 24px;
+
+    @include page-header;
+    
+    .filters {
+      display: flex;
+      align-items: center;
+
+      @include breakpoint(large) {
+        margin: 24px 0 0 0;
+        width: 100%;
+      }
+
+      i {
+        margin: 0 12px 0 0;
+        cursor: pointer;
+        font-size: 17px;
+        color: #8999ac;
+
+        &.is-active {
+          color: #00A0FF;
+        }
+
+        &:first-child {
+          border-right: 1px solid #d9d9d9;
+          padding-right: 12px;
+        }
+      }
+      
+      .button {
+        background-color: #00A0FF;
+        color: #FFF;
+        border: #00A0FF;
+        width: 150px;
+        height: 45px;
+        font-size: 14px;
+        font-weight: bold;
+        transition: 300ms linear;
+        margin: 0 0 0 18px;
+        border-radius: 4px;
+
+        @include breakpoint(large) {
+          margin-left: auto;
+        }
+
+        &:hover {
+          background-color: #FFF;
+          border: 1px solid #00A0FF;
+          color: #00A0FF;
+        }
+      }
+    }
+  }
+
+  .products-list {
+    margin: 24px 0 0 0;
+    padding: 0 12px;
+
+    @include is-empty;
+    
+    @include breakpoint(large) {
+      padding: 0 24px;
+    }
+
+    .column {
+      padding: 0;
+
+      @media screen and (min-width: 768px) and (max-width: 1000px) {
+        padding: 0 12px;
+      }
+    }
+  }
+
+  .product-table {
+    margin: 24px 0 0 0;
+    padding: 0 12px;
+
+    @include is-empty;
+  }
+}

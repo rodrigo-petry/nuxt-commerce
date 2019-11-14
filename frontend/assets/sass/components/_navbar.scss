@@ -1,0 +1,22 @@
+#navbar {
+  height: 70px;
+  border-bottom: 1px solid rgba(133,141,165, .3);
+  padding: 0 30px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #14355C;
+
+  & i {
+    font-size: 18px;
+    cursor: pointer;
+    color: #8999ac;
+  }
+
+  .user-image {
+    width: 50px;
+    height: 50px;
+    border-radius: 25px;
+  }
+}

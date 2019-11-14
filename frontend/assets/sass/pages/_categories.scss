@@ -1,0 +1,8 @@
+@import '@/assets/sass/abstracts/_variables.scss';
+@import '@/assets/sass/abstracts/_mixins.scss';
+
+.categories {
+  padding: 30px 24px 12px 24px;
+
+  @include page-header;
+}

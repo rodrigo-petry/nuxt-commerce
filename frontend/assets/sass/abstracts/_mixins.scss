@@ -1,0 +1,61 @@
+@import '@/assets/sass/abstracts/_variables.scss';
+
+@mixin page-header {
+  @include breakpoint(large) {
+    flex-direction: column;
+  }
+
+  .header-texts {
+    @include breakpoint(large) {
+      width: 100%;
+    }
+    
+    .header-title {
+      display: flex;
+      align-items: center;
+
+      i {
+        margin: 0 10px 0 0;
+        font-size: 18px;
+        cursor: pointer;
+      }
+    }
+
+    h1 {
+      font-size: 26px;
+      color: #14355C;
+      
+      &::after {
+        content: '';
+        display: block;
+        width: 80px;
+        border-top: 2px solid #75C23C;
+        margin: 8px 0 0 0;
+      }
+    }
+
+    p {
+      max-width: 100%;
+      color: #899AAD;
+      margin: 16px 24px 0 0;
+
+      @include breakpoint(large) {
+        margin: 0;
+      }
+    }
+  }
+}
+
+@mixin is-empty {
+  .is-empty {
+    background-color: #c9c9c9;
+    min-height: 300px;
+    border-radius: 4px;
+    margin: -12px 12px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
