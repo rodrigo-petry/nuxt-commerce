@@ -2,7 +2,45 @@
 @import '@/assets/sass/abstracts/_mixins.scss';
 
 .categories {
-  padding: 30px 24px 12px 24px;
+  .products-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 30px 24px 12px 24px;
 
-  @include page-header;
+    @include page-header;
+  
+    .filters {
+      display: flex;
+      align-items: center;
+
+      @include breakpoint(large) {
+        margin: 24px 0 0 0;
+        width: 100%;
+      }
+
+      .button {
+        background-color: #00A0FF;
+        color: #FFF;
+        border: #00A0FF;
+        width: 150px;
+        height: 45px;
+        font-size: 14px;
+        font-weight: bold;
+        transition: 300ms linear;
+        margin: 0 0 0 18px;
+        border-radius: 4px;
+
+        @include breakpoint(large) {
+          margin-left: auto;
+        }
+
+        &:hover {
+          background-color: #FFF;
+          border: 1px solid #00A0FF;
+          color: #00A0FF;
+        }
+      }
+    }
+  }
 }
