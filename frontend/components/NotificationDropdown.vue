@@ -14,6 +14,7 @@
       >
         <div class="modal-card" style="width:300px;">
           <section class="modal-card-body">
+            <img src="notification.svg" alt="" class="notification-unread">
             <h4 class="notification-title">Notificações</h4>
 
             <div class="notifications">
@@ -47,6 +48,11 @@
 .notification-dropdown {
   .modal-card-body {
     padding: 0;
+
+    .notification-unread {
+      width: 15.75px;
+      height: 18px;
+    }
 
     .notification-title {
       font-size: 16px;
