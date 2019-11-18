@@ -14,7 +14,6 @@
       >
         <div class="modal-card" style="width:300px;">
           <section class="modal-card-body">
-            <img src="notification.svg" alt="" class="notification-unread">
             <h4 class="notification-title">Notificações</h4>
 
             <div class="notifications">
