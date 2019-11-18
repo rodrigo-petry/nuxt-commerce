@@ -35,7 +35,9 @@
       trap-focus
       aria-role="dialog"
       aria-modal
-    ></b-modal>
+    >
+      <CategoryModal @productChange="productChange" />
+    </b-modal>
 
     <b-loading 
       :active.sync="isLoading" 
@@ -48,11 +50,13 @@
 import CategoriesList from '@/components/CategoriesList'
 import EmptyContent from '@/components/EmptyContent'
 import Category from '@/services/Category'
+import CategoryModal from '@/components/CategoryModal'
 
 export default {
   components: {
     CategoriesList,
-    EmptyContent
+    EmptyContent,
+    CategoryModal
   },
   data () {
     return {
