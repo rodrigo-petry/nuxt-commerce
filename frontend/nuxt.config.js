@@ -39,6 +39,7 @@ export default {
   ** Nuxt.js modules
   */
   modules: [
+    '@nuxtjs/auth',
     // Doc: https://buefy.github.io/#/documentation
     'nuxt-buefy',
     // Doc: https://axios.nuxtjs.org/usage
@@ -60,6 +61,7 @@ export default {
   ** See https://axios.nuxtjs.org/options
   */
   axios: {
+
   },
   /*
   ** Build configuration
@@ -73,5 +75,17 @@ export default {
   },
   router: {
     linkExactActiveClass: 'exact-active-link'
+  },
+
+  auth: {
+    strategies: {
+      local: {
+        endpoints: {
+          login: { url: 'login', method: 'post', propertyName: 'data.token' },
+          user: { url: 'me', method: 'get', propertyName: 'data' },
+          logout: false
+        }
+      }
+    }
   }
 }

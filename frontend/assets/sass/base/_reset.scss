@@ -41,6 +41,11 @@ html, #__layout {
 	height: 100%;
 } 
 
+html, #guest {
+	min-height: 100vh;
+	height: 100%;
+}
+
 .is-clipped {
 	overflow: auto !important;
 }
