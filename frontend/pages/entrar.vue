@@ -6,14 +6,7 @@
     "
   >
     <form action="">
-      <h1 class="title">Cadastrar</h1>
-
-      <div class="field">
-        <label class="label">Usuário</label>
-        <div class="control">
-          <input type="text" class="input" placeholder="Nome do Usuário">
-        </div>
-      </div>
+      <h1 class="title">Entrar</h1>
 
       <div class="field">
         <label class="label">Email</label>
@@ -30,14 +23,16 @@
       </div>
 
       <nuxt-link 
-        to="/entrar"
+        to="/"
         tag="button" 
         class="button"
-      >Cadastrar</nuxt-link>
+      >
+        Entrar  
+      </nuxt-link>
       
       <p class="already-account">
-        Já possuí uma conta? 
-        <nuxt-link to="/entrar">Clique aqui</nuxt-link>
+        Não possuí uma conta? 
+        <nuxt-link to="/cadastro">Clique aqui</nuxt-link>
       </p>
     </form>
 
