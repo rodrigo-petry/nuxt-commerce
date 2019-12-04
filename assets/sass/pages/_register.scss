@@ -1,0 +1,48 @@
+@import '@/assets/sass/abstracts/_variables.scss';
+
+.cadastro {
+  margin: 0 auto;
+  min-height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .title {
+    font-size: 1.4rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+  }
+
+  form {
+    max-width: 550px;
+    width: 550px;
+    background-color: #FFF;
+    padding: 30px 24px 30px 24px;
+    border-radius: 12px;
+
+    @include breakpoint(medium) {
+      width: 95%;
+    }
+
+    .button {
+      background-color: #00A0FF;
+      color: #FFF;
+      width: 100%;
+      height: 50px;
+      transition: 300ms linear;
+
+      &:hover {
+        background-color: transparent;
+        border-color: #00A0FF;
+        color: #00A0FF;
+      }
+    }
+  }
+
+  .already-account {
+    margin: 1rem 0 0 0;
+    text-align: center;
+  }
+}
