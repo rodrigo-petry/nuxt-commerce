@@ -1,48 +1,105 @@
 <template>
-  <div class="cadastro" 
-    style="
-      background-image: url('bg-register.jpg');
-      background-size: cover;
-    "
-  >
-    <form action="">
-      <h1 class="title">Entrar</h1>
+  <section class="section">
+    <div class="container">
+      <div class="columns">
+        <div class="column is-4 is-offset-4">
+          <h2 class="title has-text-centered">Entrar</h2>
 
-      <div class="field">
-        <label class="label">Email</label>
-        <div class="control">
-          <input type="email" class="input" placeholder="Email do Usuário">
+          <form method="post" @submit.prevent="register">
+            <div class="field">
+              <label class="label">Email</label>
+              <div class="control">
+                <input
+                  type="email"
+                  class="input"
+                  name="email"
+                  v-model="user.email"
+                  autocomplete="email"
+                  required
+                >
+              </div>
+            </div>
+            
+            <div class="field">
+              <label class="label">Senha</label>
+              <div class="control">
+                <input
+                  type="password"
+                  class="input"
+                  name="password"
+                  v-model="user.password"
+                  autocomplete="current-password"
+                  required
+                >
+              </div>
+            </div>
+            
+            <div class="control">
+              <button type="submit" class="button is-dark is-fullwidth">Entrar</button>
+            </div>
+          </form>
+
+          <div class="has-text-centered" style="margin-top: 20px">
+            Não tem uma conta? <nuxt-link to="/cadastrar">Cadastrar</nuxt-link>
+          </div>
         </div>
       </div>
+    </div>
 
-      <div class="field">
-        <label class="label">Senha</label>
-        <div class="control">
-          <input type="password" class="input" placeholder="Senha">
-        </div>
-      </div>
-
-      <nuxt-link 
-        to="/"
-        tag="button" 
-        class="button"
-      >
-        Entrar  
-      </nuxt-link>
-      
-      <p class="already-account">
-        Não possuí uma conta? 
-        <nuxt-link to="/cadastro">Clique aqui</nuxt-link>
-      </p>
-    </form>
-
-  </div>  
+    <b-loading 
+      :active.sync="isLoading" 
+      :can-cancel="true"
+    ></b-loading>
+  </section>
 </template>
 
 <script>
+import User from '@/services/User'
+
 export default {
-  layout (context) {
-    return 'guest'
+  layout: 'no-auth',
+  data () {
+    return {
+      user: {
+        email: '',
+        password: '',
+      },
+      isLoading: false
+    }
+  },
+
+  methods: {
+    async register() {
+      this.isLoading = true
+
+      try {
+        await User.login(this.user)
+
+        this.$router.push('/')
+      } catch (e) {
+        this.isLoading = false
+
+        this.$buefy.dialog.alert({
+          title: 'Erro',
+          message: 'Credenciais digitadas são inválidas.',
+          type: 'is-danger',
+          hasIcon: true,
+          icon: 'times-circle',
+          iconPack: 'fa',
+          ariaRole: 'alertdialog',
+          ariaModal: true
+        })
+      }
+    }
   }
 }
 </script>
+
+<style lang="scss" scoped>
+.section {
+  min-height: 100vh;
+
+  display: flex;
+  align-items: center;
+}
+</style>

@@ -32,7 +32,7 @@
         </div>
       </nuxt-link>
 
-      <nuxt-link to="/registrar">
+      <nuxt-link to="/entrar">
         <div class="menu-item">
           <i class="fas fa-sign-out-alt"></i>
           Sair

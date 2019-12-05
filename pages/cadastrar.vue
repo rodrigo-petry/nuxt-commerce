@@ -8,6 +8,7 @@
           <form method="post" @submit.prevent="register">
             <div class="field">
               <label class="label">Nome Completo</label>
+              
               <div class="control">
                 <input
                   type="text"
@@ -19,6 +20,7 @@
                 >
               </div>
             </div>
+
             <div class="field">
               <label class="label">Email</label>
               <div class="control">
@@ -32,6 +34,7 @@
                 >
               </div>
             </div>
+            
             <div class="field">
               <label class="label">Senha</label>
               <div class="control">
@@ -45,6 +48,7 @@
                 >
               </div>
             </div>
+            
             <div class="control">
               <button type="submit" class="button is-dark is-fullwidth">Cadastrar</button>
             </div>
@@ -87,9 +91,18 @@ export default {
       try {
         await User.create(this.user)
 
-        this.$router.push('/')
+        this.$router.push('/entrar')
       } catch (e) {
-        alert(e)
+        this.$buefy.dialog.alert({
+          title: 'Erro',
+          message: 'Ocorreu um erro ao criar o usuário, verifique os campos e tente novamente.',
+          type: 'is-danger',
+          hasIcon: true,
+          icon: 'times-circle',
+          iconPack: 'fa',
+          ariaRole: 'alertdialog',
+          ariaModal: true
+        })
       }
     }
   }
