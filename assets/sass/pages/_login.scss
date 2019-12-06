@@ -1,0 +1,73 @@
+@import '@/assets/sass/abstracts/_variables.scss';
+
+.entrar {
+  min-height: 100vh;
+  background-image: url('/pexels-photo-919436.jpeg');
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  .form-card {
+    max-width: 420px;
+    width: 420px;
+    margin: 0 auto;
+    background-color: #FFF;
+    padding: 30px;
+    min-height: 420px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    @include breakpoint(small) {
+      max-width: 100%;
+      padding: 30px;
+    }  
+  }
+
+  .page-title {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    color: #14355C;
+    margin: 0 0 24px 0;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+
+    input {
+      border: 0;
+      background-color: #e6e6e6;
+      color: #14355C;
+      height: 62px;
+      margin: 0 0 16px 0;
+      font-size: 17px;
+      font-weight: 500;
+      padding: 0 20px 0 38px;
+    }
+
+    .button {
+      background-color: #00A0FF;
+      color: #FFF;
+      padding: 0 20px;
+      margin: 30px 0 0 0;
+      text-transform: uppercase;
+      font-weight: bold;
+      font-size: 15px;
+      height: 62px;
+      border: 0;
+      border-radius: 0;
+      
+      transition: 300ms linear;
+
+      &:hover {
+        background-color: #14355C;
+      }
+    }
+  }
+}
