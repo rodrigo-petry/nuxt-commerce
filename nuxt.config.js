@@ -5,7 +5,7 @@ export default {
   ** Headers of the page
   */
   head: {
-    title: '??? - Plataforma de Gestão para Ecommerce',
+    title: 'Mobs - Plataforma de Gestão para Ecommerce',
     script: [{ src: "https://kit.fontawesome.com/9c48773787.js", body: true }],
     meta: [
       { charset: 'utf-8' },

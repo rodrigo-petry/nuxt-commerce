@@ -19,7 +19,7 @@ import _7762aba2 from '../layouts/guest.vue'
 const layouts = { "_default": _6f6c098b,"_guest": _7762aba2 }
 
 export default {
-  head: {"title":"??? - Plataforma de Gestão para Ecommerce","script":[{"src":"https:\u002F\u002Fkit.fontawesome.com\u002F9c48773787.js","body":true}],"meta":[{"charset":"utf-8"},{"name":"viewport","content":"width=device-width, initial-scale=1"},{"hid":"description","name":"description","content":"My first-rate Nuxt.js project"}],"link":[{"rel":"icon","type":"image\u002Fx-icon","href":"\u002Ffavicon.ico"},{"rel":"stylesheet","type":"text\u002Fcss","href":"\u002F\u002Fcdn.materialdesignicons.com\u002F2.4.85\u002Fcss\u002Fmaterialdesignicons.min.css"}],"style":[]},
+  head: {"title":"Mobs - Plataforma de Gestão para Ecommerce","script":[{"src":"https:\u002F\u002Fkit.fontawesome.com\u002F9c48773787.js","body":true}],"meta":[{"charset":"utf-8"},{"name":"viewport","content":"width=device-width, initial-scale=1"},{"hid":"description","name":"description","content":"My first-rate Nuxt.js project"}],"link":[{"rel":"icon","type":"image\u002Fx-icon","href":"\u002Ffavicon.ico"},{"rel":"stylesheet","type":"text\u002Fcss","href":"\u002F\u002Fcdn.materialdesignicons.com\u002F2.4.85\u002Fcss\u002Fmaterialdesignicons.min.css"}],"style":[]},
 
   render (h, props) {
     const loadingEl = h('NuxtLoading', { ref: 'loading' })
